@@ -20,7 +20,8 @@ class Program
         int userChoice = int.Parse(Choice);
 
 
-        switch (userChoice){
+        switch (userChoice)
+        {
             case 1:
             journal1.Write();
             break;
@@ -44,9 +45,10 @@ class Program
             Console.WriteLine("Not an option please try again.");
             break;
         }
-        } while (Choice != "5");
+        } 
+        while (Choice != "5");
         {
             Console.WriteLine("Bye!");
         }
-        
-    }}
+    }
+    }

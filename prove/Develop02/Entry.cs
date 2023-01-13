@@ -9,7 +9,8 @@ public class Entry{
 {
 
 }
-    public void DisplayEntry(){
+    public void DisplayEntry()
+    {
         Console.WriteLine($"date: {_date} - prompt: {_prompt} / text: {_response}");
        
     }

@@ -5,7 +5,8 @@ public class Journal
     public List<Entry> _events = new List<Entry> ();
     public string _file = "" ;
 
-    public void Write(){
+    public void Write()
+    {
     Entry newEntry = new Entry();
     PromptGenerator prompt = new PromptGenerator();
 
@@ -14,20 +15,26 @@ public class Journal
     
     prompt.OptionPrompts();
     string userInput = "n";
-    do {
+    do 
+    {
    string newPrompt = prompt.RandomPrompt();
    newEntry._prompt = newPrompt;
    Console.Write($"{newPrompt}\nWould you like a new prompt?\n \n(if yes type 'y' for a new prompt)\n>");
    userInput = Console.ReadLine();
-   }while(userInput == "y");
+   }
+   while(userInput == "y");
    newEntry._response = userInput;
    _events.Add(newEntry);
     }
-    public void Display(){
-    foreach(Entry entry in _events){
+    public void Display()
+    {
+    foreach(Entry entry in _events)
+    {
       entry.DisplayEntry();
-   };}
-    public void SaveToFile(){
+   };
+   }
+    public void SaveToFile()
+    {
 Console.WriteLine("What is the filename?");
    string filename = Console.ReadLine();
 
@@ -41,7 +48,8 @@ Console.WriteLine("What is the filename?");
    }
     }
 
-    public void LoadFromFile(){
+    public void LoadFromFile()
+    {
     Console.WriteLine("What is the filename?");
     string filename = Console.ReadLine();
 
