@@ -4,7 +4,7 @@ using System;
 public class Menu
 {
     private List<string> mainMenu, createGoalMenu;
-    private int mainMenuSelection;
+    private int mainMenuSelection ;
     private int newGoalSelection;
 
     public Menu()
