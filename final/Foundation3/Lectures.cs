@@ -7,14 +7,18 @@ public class Lectures : Event
 
     
 
-    public Lectures(string eventTitle, string eventDescription, string eventDate, string eventTime, Addresses eventAddress, string _speakerName, int _capacity) : base(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+    public Lectures(string eventTitle, string eventDescription, string eventDate, string eventTime, Addresses eventAddress, string speakerName, int capacity) : base(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
     {
         base.SetEventTitle(eventTitle);
         base.SetEventDescription(eventDescription);
-        base.SetEventDescription(eventDate);
+        base.SetEventDate(eventDate);
         base.SetEventTime(eventTime);
         base.SetEventAddress(eventAddress);
+        SetSpeaker(speakerName);
+        SetCapacity(capacity);
     }
+
+   
 
     public string GetSpeaker()
     {

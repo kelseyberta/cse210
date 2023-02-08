@@ -9,9 +9,11 @@ public Receptions(string eventTitle, string eventDescription, string eventDate, 
     {
         base.SetEventTitle(eventTitle);
         base.SetEventDescription(eventDescription);
-        base.SetEventDescription(eventDate);
+        base.SetEventDate(eventDate);
         base.SetEventTime(eventTime);
         base.SetEventAddress(eventAddress);
+        SetRsvpEmail(rsvpEmail);
+        SetRsvpPhone(rsvpPhone);
     }
     public string GetRsvpEmail()
     {
@@ -32,7 +34,7 @@ public Receptions(string eventTitle, string eventDescription, string eventDate, 
  public void DisplayReceptionDetails()
     {
         base.DisplayStandardDetails();
-        Console.WriteLine($"Please RSVP to email: {_rsvpEmail} phone: {_rsvpPhone}");
+        Console.WriteLine($"Please RSVP to email: {GetRsvpEmail()} phone: {GetRsvpPhone()}");
     }
 
 }

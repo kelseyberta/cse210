@@ -32,8 +32,10 @@ public void SetState(string state)
 {
     _state = state;
 }
-    public void DisplayAddress()
-    {
-        Console.WriteLine($"{_street} {_city}, {_state}");
-    }
+public void DisplayAddress()
+{
+    Console.WriteLine($"{_street} {_city}, {_state}");
+}
+
+    
 }

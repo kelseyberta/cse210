@@ -9,9 +9,10 @@ public class OutdoorGatherings : Event
     {
         base.SetEventTitle(eventTitle);
         base.SetEventDescription(eventDescription);
-        base.SetEventDescription(eventDate);
+        base.SetEventDate(eventDate);
         base.SetEventTime(eventTime);
         base.SetEventAddress(eventAddress);
+        SetWeatherForecast(weatherForecast);
     }
     public string GetWeatherForecast()
     {
@@ -21,7 +22,7 @@ public class OutdoorGatherings : Event
     {
         _weatherForecast = weatherForecast;
     }
-    public void DisplayReceptionDetails()
+    public void DisplayOutdoorGatheringDetails()
     {
         base.DisplayStandardDetails();
         Console.WriteLine($"The weatherforecast will be {_weatherForecast}");

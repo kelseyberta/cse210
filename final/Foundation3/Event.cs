@@ -12,7 +12,7 @@ public class Event
     {
         SetEventTitle(eventTitle);
         SetEventDescription(eventDescription);
-        SetEventDescription(eventDate);
+        SetEventDate(eventDate);
         SetEventTime(eventTime);
         SetEventAddress(eventAddress);
     }
