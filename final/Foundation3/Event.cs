@@ -6,9 +6,9 @@ public class Event
     private string _eventDescription;
     private string _eventDate;
     private string _eventTime;
-    private Addresses _eventAddress;
+    private string _eventAddress;
 
-    public Event(string eventTitle, string eventDescription, string eventDate, string eventTime, Addresses eventAddress)
+    public Event(string eventTitle, string eventDescription, string eventDate, string eventTime, string eventAddress)
     {
         SetEventTitle(eventTitle);
         SetEventDescription(eventDescription);
@@ -54,11 +54,11 @@ public class Event
     {
         _eventTime = eventTime;
     }
-   public Addresses GetEventAddress()
+   public string GetEventAddress()
    {
     return _eventAddress;
    }
-   public void SetEventAddress(Addresses eventAddress)
+   public void SetEventAddress(string eventAddress)
    {
     _eventAddress = eventAddress;
    }
@@ -68,7 +68,7 @@ public class Event
         string eventDescription = GetEventDescription();
         string eventDate = GetEventDate();
         string eventTime = GetEventTime();
-        Addresses eventAddress = GetEventAddress();
+        string eventAddress = GetEventAddress();
 
         Console.WriteLine(" ");
         Console.WriteLine($"Event name: {eventTitle} ");

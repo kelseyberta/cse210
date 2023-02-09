@@ -7,7 +7,7 @@ public class Lectures : Event
 
     
 
-    public Lectures(string eventTitle, string eventDescription, string eventDate, string eventTime, Addresses eventAddress, string speakerName, int capacity) : base(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+    public Lectures(string eventTitle, string eventDescription, string eventDate, string eventTime, string eventAddress, string speakerName, int capacity) : base(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
     {
         base.SetEventTitle(eventTitle);
         base.SetEventDescription(eventDescription);

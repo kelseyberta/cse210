@@ -5,7 +5,7 @@ public class Receptions : Event
  private string _rsvpEmail;
  private string _rsvpPhone;
 
-public Receptions(string eventTitle, string eventDescription, string eventDate, string eventTime, Addresses eventAddress, string rsvpEmail, string rsvpPhone) : base(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
+public Receptions(string eventTitle, string eventDescription, string eventDate, string eventTime, string eventAddress, string rsvpEmail, string rsvpPhone) : base(eventTitle, eventDescription, eventDate, eventTime, eventAddress)
     {
         base.SetEventTitle(eventTitle);
         base.SetEventDescription(eventDescription);

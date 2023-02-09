@@ -4,9 +4,11 @@ public class Addresses
     private string _city;
     private string _state = "";
 
-public Addresses(string _street, string _city, string _state)
+public Addresses(string street, string city, string state)
 {
-
+    _street = street;
+    _city = city;
+    _state = state;
 }
 public string GetStreet()
 {
@@ -32,9 +34,10 @@ public void SetState(string state)
 {
     _state = state;
 }
-public void DisplayAddress()
+public string GetAddress()
 {
-    Console.WriteLine($"{_street} {_city}, {_state}");
+    string getAddress = $"{_street} {_city}, {_state}";
+    return getAddress;
 }
 
     
