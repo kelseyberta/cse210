@@ -2,35 +2,44 @@ using System.IO;
 
 public class Order
 {
-    private List<Product> _products = new List<Product>();
-    private Customer _customer;
-    private string _packingLabel = "";
-    private string _shippingLabel = "";
-    private float _orderTotal;
-    private const int _shippingCost = 0;
+    public List<Product> _products = new List<Product>();
+    public string _customer { get; set; }
+    public double _shippingCost { get; set; }
 
-    public Order()
+    public double GetOrderTotal()
     {
-
-    }
-    public float GetOrderTotal()
-    {
-        _orderTotal = 
+        double total = 0; 
         foreach (Product product in _products)
         {
-            product.GetProductPrice();
-    
+            double subtotal = product.GetProductPrice();
+            total += subtotal;
         }
+        total = Math.Round(total, 2);
+        return total;
+    }
+    public double GetTotalPrice()
+    {
+        double total = (GetOrderTotal() + _shippingCost);
+        total = Math.Round(total, 2);
+        return total;
+    }
+    public void DisplayTotalPrice()
+    {
+        Console.WriteLine($"Total: ${GetTotalPrice()}");
     }
     public void DisplayPackingLabel()
     {
+       Console.WriteLine($"Customer: {_customer}");
        foreach (Product product in _products)
        {
-        product.DisplayProductName();
+        product.DisplayProduct();
        }
+       Console.WriteLine($"Order total: ${GetOrderTotal()}");
+       Console.WriteLine($"Shipping cost: ${_shippingCost}");
+       Console.WriteLine($"Total: ${GetTotalPrice()}");
     }
     public void DisplayShippingLabel()
     {
-        Customer.DisplayCustomerInfo();
+        Console.WriteLine($"Ship to: {_customer}");
     }
 }

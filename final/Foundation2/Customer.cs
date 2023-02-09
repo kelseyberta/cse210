@@ -2,24 +2,32 @@ using System.IO;
 
 public class Customer
 {
-    private string _customerName = "";
-    private Address _address;
+    private string _customerName { get; set; }
+    private string _customerAddress { get; set; }
+    private string _customerCountry { get; set;}
 
-    public Customer(string customerName, Address address)
+    public Customer(string customerName, string customerAddress, string customerCountry)
     {
         _customerName = customerName;
-        _address = address;
+        _customerAddress = customerAddress;
+        _customerCountry = customerCountry;
     }
-    public string GetCustomerName()
+    public double GetShippingCost()
     {
-        return _customerName;
+        double shippingCost = 0;
+        if (_customerCountry == "USA")
+        {
+            shippingCost = 5;
+        }
+        else
+        {
+            shippingCost = 35;
+        }
+        return shippingCost;
     }
-    public void SetCustomerName(string customerName)
+   
+    public string DisplayCustomerInfo()
     {
-        _customerName = customerName;
-    }
-    public void DisplayCustomerInfo()
-    {
-        Console.WriteLine($"{_customerName}\n {_address}");
+        return $"{_customerName}\n {_customerAddress}";
     }
 }

@@ -2,21 +2,26 @@ using System.IO;
 
 public class Address
 {
-    private string _street = "";
-    private string _city = "";
-    private string _state = "";
-    private string _country = "USA";
+    private string _street { get; set; }
+    private string _city { get; set; }
+    private string _state { get; set; }
+    private string _country { get; set;}
 
-    public string LiveInUSA()
+    public Address(string street, string city, string state, string country)
     {
-        if (_country = "USA")
-        {
-
-        }
-
+        _street = street;
+        _city = city;
+        _state = state;
+        _country = country;
     }
-    public void DisplayAddress()
+
+    public string GetCountry()
     {
-        Console.WriteLine($"{_street} {_city}, {_state} {_country}.");
+         return _country;
+    }
+    public string GetAddress()
+    {
+        string getAddress = $"{_street} {_city}, {_state} {_country}.";
+        return getAddress;
     }
 }
